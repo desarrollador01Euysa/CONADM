@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="left-side" *ngIf="!showRightInfo" (click)="showInfo('left')">
+    <h1 class="textoop">Sobre nosotros</h1>
+    <div class="info-text" *ngIf="showLeftInfo">
+      <p>Texto informativo sobre nosotros.</p>
+      <div class="back-arrow" [class.right]="moveRight" (click)="reset($event)"></div>
+    </div>
+  </div>
+  <div class="center" [class.move-left]="moveLeft" [class.move-right]="moveRight">
+    <form [formGroup]="seguridad.Datos" novalidate class="login-form">
+      <div class="imgen">
+        <img src="/assets/img/7a3050d0-643e-4401-8cfd-9f74a78ffff2-removebg-preview.png" class="imgen">
+      </div>
+      <mat-form-field class="full-width">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="usuario" placeholder="Usuario">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Contraseña">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" type="button" (click)="validar()">Iniciar Sesión</button>
+    </form>
+  </div>
+  <div class="right-side" *ngIf="!showLeftInfo" (click)="showInfo('right')">
+    <h1 class="textoop">Opciones y funciones</h1>
+    <div class="info-text" *ngIf="showRightInfo">
+      <p>Texto informativo de opciones y funciones.</p>
+      <div class="back-arrow" [class.left]="moveLeft" (click)="reset($event)"></div>
+    </div>
+  </div>
+</div>
+<div class="carousel-container">
+  <div class="carousel-image" *ngFor="let image of images; let i = index" [class.active]="i === activeImageIndex">
+    <img [src]="image" alt="Image {{i + 1}}">
+  </div>
+</div>
