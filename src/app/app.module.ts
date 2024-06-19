@@ -34,6 +34,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ToastrModule } from 'ngx-toastr';
 import { PrincipalComponent } from './inicio/principal/principal.component';
 import { NavbarComponent } from './navbar/navbar.component';
+//import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 
 @NgModule({
   declarations: [
@@ -74,7 +77,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatAutocompleteModule,
     MatSliderModule,
     ToastrModule.forRoot(),
-    MDBBootstrapModule.forRoot()
+    //MDBBootstrapModule.forRoot()
+
   ],
   //entryComponents: [DialogAdelantoNomComponent]  -- cuadros de dialogo
   // servicios generales

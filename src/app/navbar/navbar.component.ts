@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  preventDefault(event: Event) {
+    event.preventDefault();
+  }
 
   constructor() { }
 
@@ -13,7 +16,7 @@ export class NavbarComponent implements OnInit {
     this.sd();
   }
   sd(){
-    
+
   }
 
 }

@@ -12,9 +12,9 @@ export class PruebasServicio {
 
     constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-    BaseURI = "https://rickandmortyapi.com/api";
+    BaseURI = "http://localhost:9000/api";
 
     GET_API() {
-        return this.http.get(this.BaseURI + '/character');
+        return this.http.get(this.BaseURI);
     }
 }
