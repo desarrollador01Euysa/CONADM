@@ -27,9 +27,10 @@ export class IniciarSesionComponent implements OnInit {
   moveRight = false;
   usua: any;
   contra: any;
+  empleados: any;
   constructor(public seguridad: SeguridadServicio,
     fb: FormBuilder,
-    public pruebas: PruebasServicio,
+    public empleadosService: PruebasServicio,
     //public dialogRef: MatDialogRef<DialogAdelantoNomComponent>,
     //@Inject(MAT_DIALOG_DATA) public data, 
     private toastr: ToastrService,
@@ -71,7 +72,7 @@ export class IniciarSesionComponent implements OnInit {
     }, 8000);
   }
   GET_API() {
-    this.pruebas.GET_API().subscribe(
+    this.empleadosService.GET_API().subscribe(
       res => {
         this.respuesta = res;
       },
@@ -108,6 +109,35 @@ export class IniciarSesionComponent implements OnInit {
     //     }
     //   );
     
+  }
+
+
+  getEmpleados() {
+    this.empleadosService.getEmpleados().subscribe(
+      data => this.empleados = data,
+      err => console.error(err)
+    );
+  }
+
+  addEmpleado(empleado: any) {
+    this.empleadosService.addEmpleado(empleado).subscribe(
+      () => this.getEmpleados(),
+      err => console.error(err)
+    );
+  }
+
+  deleteEmpleado(id: number) {
+    this.empleadosService.deleteEmpleado(id).subscribe(
+      () => this.getEmpleados(),
+      err => console.error(err)
+    );
+  }
+
+  updateEmpleado(id: number, empleado: any) {
+    this.empleadosService.updateEmpleado(id, empleado).subscribe(
+      () => this.getEmpleados(),
+      err => console.error(err)
+    );
   }
 }
 
