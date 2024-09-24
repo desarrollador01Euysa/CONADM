@@ -7,22 +7,51 @@
     </div>
   </div>
   <div class="center" [class.move-left]="moveLeft" [class.move-right]="moveRight">
-    <form [formGroup]="seguridad.Datos" novalidate class="login-form">
-      <div class="imgen">
-        <img src="/assets/img/7a3050d0-643e-4401-8cfd-9f74a78ffff2-removebg-preview.png" class="imgen">
-      </div>
-      <mat-form-field class="full-width">
-        <mat-label>Usuario</mat-label>
-        <input matInput formControlName="usuario" placeholder="Usuario">
-      </mat-form-field>
-      <br>
-      <mat-form-field class="full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" formControlName="password" placeholder="Contraseña">
-      </mat-form-field>
-      <br>
-      <button mat-raised-button color="primary" type="button" (click)="GET_API()">Iniciar Sesión</button>
-    </form>
+    <mat-tab-group>
+      <mat-tab label="Inicio de sesion">    <form [formGroup]="seguridad.Datos" novalidate class="login-form">
+        <div class="imgen">
+          <img src="/assets/img/7a3050d0-643e-4401-8cfd-9f74a78ffff2-removebg-preview.png" class="imgen">
+        </div>
+        <mat-form-field class="full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="usuario" placeholder="Usuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Contraseña">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="button" (click)="validar()">Iniciar Sesión</button>
+      </form></mat-tab>
+      <mat-tab label="Registrate">     <form [formGroup]="seguridad.Datos" novalidate class="login-form">
+        <div class="imgen">
+          <img src="/assets/img/7a3050d0-643e-4401-8cfd-9f74a78ffff2-removebg-preview.png" class="imgen">
+        </div>
+        <mat-form-field class="full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput  placeholder="Usuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Telefono</mat-label>
+          <input matInput   placeholder="Usuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput   placeholder="Usuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" placeholder="Contraseña">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="button" >Registrarse</button>
+      </form> </mat-tab>
+    </mat-tab-group>
+
   </div>
   <div class="right-side" *ngIf="!showLeftInfo" (click)="showInfo('right')">
     <h1 class="textoop">Opciones y funciones</h1>

@@ -29,12 +29,13 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSliderModule } from '@angular/material/slider';
 import { ToastrModule } from 'ngx-toastr';
 import { PrincipalComponent } from './inicio/principal/principal.component';
 import { NavbarComponent } from './navbar/navbar.component';
 //import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -48,6 +49,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    MatStepperModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
@@ -77,6 +79,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatAutocompleteModule,
     MatSliderModule,
     ToastrModule.forRoot(),
+    MatGridListModule,
+
     //MDBBootstrapModule.forRoot()
 
   ],

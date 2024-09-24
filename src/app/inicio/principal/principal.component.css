@@ -1,0 +1,77 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+  
+  .mat-stepper-vertical {
+    margin-top: 16px;
+  }
+  
+  #toggle-linear {
+    margin-bottom: 16px;
+  }
+  
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  .radio-group {
+    display: flex;
+    justify-content: space-around; /* Disposición en fila */
+    margin-bottom: 20px; /* Espaciado entre radio buttons y el formulario */
+}
+
+.mat-radio-button {
+    margin: 0 10px; /* Espacio lateral entre las opciones de radio */
+    font-weight: 500; /* Fuente más gruesa */
+    font-size: 16px; /* Aumentar tamaño de fuente */
+}
+
+.example-form {
+    background-color: #f9f9f9; /* Fondo claro para el formulario */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.example-full-width {
+    width: 100%; /* Asegurarse de que los campos ocupen el 100% del ancho */
+}
+
+.mat-form-field {
+    margin-bottom: 15px; /* Espacio entre los campos de formulario */
+}
+
+/* Estilo del área informativa */
+.info-area {
+    margin-top: 20px; /* Espaciado superior */
+    padding: 15px; /* Espaciado interno */
+    border: 1px solid #007bff; /* Borde azul */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f0f8ff; /* Fondo claro para el área informativa */
+}
+
+.info-image {
+    max-width: 100%; /* Hacer que la imagen sea responsiva */
+    height: auto; /* Mantener proporciones de la imagen */
+    border-radius: 5px; /* Bordes redondeados en la imagen */
+}
+
+/* Personalización de los botones */
+.button-row button {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.button-row button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}

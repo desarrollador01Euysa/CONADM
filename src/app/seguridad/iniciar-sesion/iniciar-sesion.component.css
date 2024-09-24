@@ -181,3 +181,36 @@ button:hover {
 .carousel-image.active {
   opacity: 1;
 }
+/* Estilos para el grupo de pestañas */
+.mat-tab-group {
+  background-color: #ffffff; /* Color de fondo del grupo */
+  border: 1px solid #ffffff; /* Borde alrededor del grupo */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para las pestañas */
+.mat-tab-label {
+  font-weight: bold; /* Texto en negrita */
+  color: #333; /* Color del texto */
+  padding: 16px; /* Espaciado interno */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+/* Cambiar color de fondo al pasar el mouse */
+.mat-tab-label:hover {
+  background-color: #ffffff; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para la pestaña activa */
+.mat-tab-label.mat-tab-label-active {
+  color: #007bff; /* Color del texto activo */
+  border-bottom: 2px solid #007bff; /* Subrayado para la pestaña activa */
+}
+
+/* Estilos para el contenido de las pestañas */
+.mat-tab-body {
+  padding: 16px; /* Espaciado interno del contenido */
+  background-color: #ffffff; /* Color de fondo del contenido */
+  border-top: 1px solid #ffffff; /* Borde superior del contenido */
+  border-radius: 0 0 4px 4px; /* Bordes redondeados en la parte inferior */
+}

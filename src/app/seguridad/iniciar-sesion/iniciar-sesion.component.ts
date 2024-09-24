@@ -39,6 +39,7 @@ export class IniciarSesionComponent implements OnInit {
   ngOnInit(): void {
     this.GET_API();
     this.startCarousel();
+    this.getEmpleados();
     this.seguridad.Datos.patchValue({
       usuario: "usuario",
       password: "12345",

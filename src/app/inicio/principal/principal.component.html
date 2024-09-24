@@ -1,0 +1,141 @@
+<mat-radio-group aria-label="Select an option" class="radio-group" (change)="onRadioChange($event)">
+    <mat-radio-button value="ejecutivo">Ejecutivo de Ventas</mat-radio-button>
+    <mat-radio-button value="gerente">Gerente</mat-radio-button>
+    <mat-radio-button value="supervisor">Supervisor</mat-radio-button>
+    <mat-radio-button value="administrativo">Administrativo</mat-radio-button>
+</mat-radio-group>
+<!-- Área informativa -->
+<div class="info-area" *ngIf="selectedValue">
+    <h3>Información sobre {{ selectedValue }}</h3>
+    <img [src]="getImageForRole(selectedValue)" alt="{{ selectedValue }}" class="info-image">
+    <p>{{ getDescriptionForRole(selectedValue) }}</p>
+</div>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ej. Juan Pérez" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput type="email" placeholder="Ej. correo@dominio.com" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Teléfono</mat-label>
+        <input matInput type="tel" placeholder="Ej. (55) 1234-5678" required>
+    </mat-form-field>
+</form>
+
+
+  <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <!-- Paso 1: Información Personal -->
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Información Personal</ng-template>
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput formControlName="nombre" placeholder="Ej. Juan Pérez" required>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Ej. correo@dominio.com" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="tel" formControlName="telefono" placeholder="Ej. (55) 1234-5678" required>
+        </mat-form-field>
+  
+        <div class="button-row">
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+  
+    <!-- Paso 2: Dirección -->
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Dirección</ng-template>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Dirección</mat-label>
+          <input matInput formControlName="direccion" placeholder="Ej. Calle Principal #123" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Ciudad</mat-label>
+          <input matInput formControlName="ciudad" placeholder="Ej. Ciudad de México" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Código Postal</mat-label>
+          <input matInput formControlName="codigoPostal" placeholder="Ej. 12345" required>
+        </mat-form-field>
+  
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+  
+    <!-- Paso 3: Experiencia Laboral -->
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Experiencia Laboral</ng-template>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Puesto Anterior</mat-label>
+          <input matInput formControlName="puesto" placeholder="Ej. Desarrollador Web" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Empresa</mat-label>
+          <input matInput formControlName="empresa" placeholder="Ej. Empresa XYZ" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Años de Experiencia</mat-label>
+          <input matInput type="number" formControlName="aniosExperiencia" placeholder="Ej. 5" required>
+        </mat-form-field>
+  
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+  
+    <!-- Paso 4: Educación -->
+    <mat-step [stepControl]="fourthFormGroup">
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel>Educación</ng-template>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Último Grado Académico</mat-label>
+          <input matInput formControlName="gradoAcademico" placeholder="Ej. Licenciatura" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Institución</mat-label>
+          <input matInput formControlName="institucion" placeholder="Ej. Universidad ABC" required>
+        </mat-form-field>
+  
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button (click)="stepper.reset()">Finalizar</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-vertical-stepper>
+
+
+
+
+
+
+  
+  
